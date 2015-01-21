@@ -1,7 +1,5 @@
 package com.mybdshop.appinfo;
 
-import java.util.ArrayList;
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -15,9 +13,6 @@ import com.mybdshop.datamodel.UserInfoData;
 
 public class AppController {
 	public static AppController instance;
-	
-	private ArrayList<UserInfoData> hottestInfoList;
-	
 	private UserInfoData userInfo;
 	
 	public UserInfoData getUserInfo() {
