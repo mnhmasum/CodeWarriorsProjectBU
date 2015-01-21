@@ -64,6 +64,7 @@ public class AppController {
 				
 			}
 		});
+		
 		alert.show();
 	}
 

@@ -115,6 +115,7 @@ public class FragmentProfileUpdate extends Fragment implements OnClickListener{
 		}
 	}
 	
+	//update user information
 	private void update() {
 		RequestQueue queue = Volley.newRequestQueue(getActivity());
 		StringRequest myReq = new StringRequest(Method.POST,
