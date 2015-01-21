@@ -43,15 +43,10 @@ public class CustomDrawerAdapter extends ArrayAdapter<DrawerItem> {
 			view = inflater.inflate(layoutResID, parent, false);
 			drawerHolder.ItemName = (TextView) view.findViewById(R.id.drawer_itemName);
 			drawerHolder.icon = (ImageView) view.findViewById(R.id.drawer_icon);
-
-			//drawerHolder.spinner = (Spinner) view.findViewById(R.id.drawerSpinner);
-
 			drawerHolder.title = (TextView) view.findViewById(R.id.drawerTitle);
 
 			drawerHolder.headerLayout = (LinearLayout) view.findViewById(R.id.headerLayout);
 			drawerHolder.itemLayout = (LinearLayout) view.findViewById(R.id.itemLayout);
-			//drawerHolder.spinnerLayout = (LinearLayout) view.findViewById(R.id.spinnerLayout);
-
 			view.setTag(drawerHolder);
 
 		} else {
@@ -64,19 +59,15 @@ public class CustomDrawerAdapter extends ArrayAdapter<DrawerItem> {
 		if (dItem.getTitle() != null) {
 			drawerHolder.headerLayout.setVisibility(LinearLayout.VISIBLE);
 			drawerHolder.itemLayout.setVisibility(LinearLayout.GONE);
-			//drawerHolder.spinnerLayout.setVisibility(LinearLayout.GONE);
 			drawerHolder.title.setText(dItem.getTitle());
-			Log.d("Getview","Passed4");
-		} else {
 			
+		} else {
 			drawerHolder.headerLayout.setVisibility(LinearLayout.GONE);
-			//drawerHolder.spinnerLayout.setVisibility(LinearLayout.GONE);
 			drawerHolder.itemLayout.setVisibility(LinearLayout.VISIBLE);
-
 			drawerHolder.icon.setImageDrawable(view.getResources().getDrawable(dItem.getImgResID()));
 			drawerHolder.ItemName.setText(dItem.getItemName());
-			Log.d("Getview","Passed5");
 		}
+		
 		return view;
 	}
 
