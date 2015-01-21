@@ -94,6 +94,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 		
 	}
 	
+	//Check the valid email input
 	public boolean isEmailValid(String email) {
 		boolean isValid = false;
 
