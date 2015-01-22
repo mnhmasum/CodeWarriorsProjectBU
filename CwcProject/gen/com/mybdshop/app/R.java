@@ -119,6 +119,7 @@ public final class R {
         public static final int hint_user_last_name=0x7f050008;
         public static final int login=0x7f05000e;
         public static final int my_profile=0x7f050014;
+        public static final int profile_update_msg=0x7f050015;
         public static final int register=0x7f050011;
         public static final int registration=0x7f05000f;
         public static final int registration_title_name=0x7f050001;

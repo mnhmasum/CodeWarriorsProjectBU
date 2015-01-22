@@ -28,6 +28,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.mybdshop.jsonparser.JsonParser;
+import com.mybdshop.utils.ConstantValues;
 import com.mybdshop.utils.Utility;
 
 public class LoginActivity extends Activity implements OnClickListener{
@@ -98,7 +99,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 	private void login() {
 		RequestQueue queue = Volley.newRequestQueue(this);
 		StringRequest myReq = new StringRequest(Method.POST,
-				"http://radioonlinelive.com/services/api.php",
+				ConstantValues.API_URL,
 				createMyReqSuccessListener(), createMyReqErrorListener()) {
 
 			protected Map<String, String> getParams()
