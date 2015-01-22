@@ -51,7 +51,6 @@ public class MainActivity extends Activity {
 		mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
 
 		// Add Drawer Item to dataList
-		//dataList.add(new DrawerItem("My Favorites")); // adding a spinner to the list
 
 		dataList.add(new DrawerItem("Settings")); // adding a header to the list
 		dataList.add(new DrawerItem("Profiles", R.drawable.ic_action_email)); //1
