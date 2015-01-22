@@ -81,7 +81,7 @@ public class RegistrationActivity extends Activity implements OnClickListener {
 	public void registrationValidation() {
 		boolean isValid = true;
 		if (edtTextFirstName.getText().toString().trim().length() > 0) {
-			Toast.makeText(getApplicationContext(), "First Name is valid", Toast.LENGTH_SHORT).show();
+			//Toast.makeText(getApplicationContext(), "First Name is valid", Toast.LENGTH_SHORT).show();
 			edtTextFirstName.setError(null);
 			
 		} else {
@@ -90,7 +90,7 @@ public class RegistrationActivity extends Activity implements OnClickListener {
 		}
 		
 		if (edtTextLastName.getText().toString().trim().length() > 0) {
-			Toast.makeText(getApplicationContext(), "Last Name is valid", Toast.LENGTH_SHORT).show();
+			//Toast.makeText(getApplicationContext(), "Last Name is valid", Toast.LENGTH_SHORT).show();
 			edtTextLastName.setError(null);
 			
 		} else {
@@ -108,7 +108,7 @@ public class RegistrationActivity extends Activity implements OnClickListener {
 		
 		if (edtTextPassword.getText().toString().trim().length() > 0) {
 			edtTextPassword.setError(null);
-			Toast.makeText(getApplicationContext(), "Password is Valid", Toast.LENGTH_SHORT).show();
+			//Toast.makeText(getApplicationContext(), "Password is Valid", Toast.LENGTH_SHORT).show();
 		} else {
 			edtTextPassword.setError("Please enter your password");
 			isValid = false;
