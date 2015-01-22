@@ -28,6 +28,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.mybdshop.jsonparser.JsonParser;
+import com.mybdshop.utils.Utility;
 
 public class LoginActivity extends Activity implements OnClickListener{
 	private EditText edtTextEmail, edtTextPassword;
@@ -73,7 +74,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 	//login input validation @saiful
 	public void loginValidation() {
 		boolean isValid = true;
-		if (edtTextEmail.getText().toString().trim().length() > 0 && isEmailValid(edtTextEmail.getText().toString().trim())) {
+		if (edtTextEmail.getText().toString().trim().length() > 0 && Utility.isEmailValid(edtTextEmail.getText().toString().trim())) {
 			  edtTextEmail.setError(null);
 			
 		} else {
@@ -92,21 +93,6 @@ public class LoginActivity extends Activity implements OnClickListener{
 			login();
 		}
 		
-	}
-	
-	//Check the valid email input
-	public boolean isEmailValid(String email) {
-		boolean isValid = false;
-
-		String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
-		CharSequence inputStr = email;
-
-		Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
-		Matcher matcher = pattern.matcher(inputStr);
-		if (matcher.matches()) {
-			isValid = true;
-		}
-		return isValid;
 	}
 	
 	private void login() {
