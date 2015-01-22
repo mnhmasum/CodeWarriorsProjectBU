@@ -70,6 +70,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 		}
 	}
 	
+	//login input validation @saiful
 	public void loginValidation() {
 		boolean isValid = true;
 		if (edtTextEmail.getText().toString().trim().length() > 0 && isEmailValid(edtTextEmail.getText().toString().trim())) {
