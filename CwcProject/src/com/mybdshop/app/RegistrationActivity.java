@@ -81,7 +81,7 @@ public class RegistrationActivity extends Activity implements OnClickListener {
 	public void registrationValidation() {
 		boolean isValid = true;
 		if (edtTextFirstName.getText().toString().trim().length() > 0) {
-			Toast.makeText(getApplicationContext(), "First Name is valid", Toast.LENGTH_SHORT).show();
+			//Toast.makeText(getApplicationContext(), "First Name is valid", Toast.LENGTH_SHORT).show();
 			edtTextFirstName.setError(null);
 			
 		} else {
