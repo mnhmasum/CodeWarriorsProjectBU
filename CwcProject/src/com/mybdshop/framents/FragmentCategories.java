@@ -3,6 +3,7 @@ package com.mybdshop.framents;
 
 import java.util.ArrayList;
 
+import com.mybdshop.app.R;
 import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -15,7 +16,6 @@ import android.widget.EditText;
 import android.widget.GridView;
 
 import com.mybdshop.adapter.CategoryGridAdapter;
-import com.mybdshop.app.R;
 import com.mybdshop.appinfo.CategoryData;
 
 public class FragmentCategories extends Fragment implements OnClickListener{

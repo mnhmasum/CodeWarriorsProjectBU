@@ -6,9 +6,9 @@ import java.util.Map;
 
 import org.json.JSONException;
 
+import com.mybdshop.app.R;
 import android.app.Fragment;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -27,8 +27,6 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.mybdshop.app.MainActivity;
-import com.mybdshop.app.R;
 import com.mybdshop.appinfo.AppController;
 import com.mybdshop.jsonparser.JsonParser;
 import com.mybdshop.utils.Utility;

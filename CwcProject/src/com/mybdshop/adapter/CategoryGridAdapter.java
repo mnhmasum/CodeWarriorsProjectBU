@@ -2,6 +2,7 @@ package com.mybdshop.adapter;
 
 import java.util.ArrayList;
 
+import com.mybdshop.app.R;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +11,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.androidquery.AQuery;
-
-import com.mybdshop.app.R;
 import com.mybdshop.appinfo.CategoryData;
 
 public class CategoryGridAdapter extends BaseAdapter {

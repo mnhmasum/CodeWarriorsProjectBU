@@ -1,6 +1,7 @@
 package com.mybdshop.framents;
 
 
+import com.mybdshop.app.R;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +12,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.mybdshop.app.R;
 
 public class FragmentDashboard extends Fragment implements OnClickListener{
 

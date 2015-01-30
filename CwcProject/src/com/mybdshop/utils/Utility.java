@@ -1,7 +1,11 @@
 package com.mybdshop.utils;
 
+import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import android.os.Environment;
+import android.util.Log;
 
 public class Utility {
 	public static boolean isEmailValid(String email) {
@@ -16,5 +20,17 @@ public class Utility {
 			isValid = true;
 		}
 		return isValid;
+	}
+	
+	public static void createFolder() {
+		try{
+			File folder = new File(Environment.getExternalStorageDirectory() + "/cwc");
+			boolean success = true;
+			if (!folder.exists()) {
+			    success = folder.mkdir();
+			}
+		}catch(Exception e){
+			Log.i("EXCEPTION","" + e.getMessage());
+		}
 	}
 }

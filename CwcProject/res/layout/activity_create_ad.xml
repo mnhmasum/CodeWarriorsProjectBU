@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp" >
+
+    <RelativeLayout
+        android:id="@+id/layout_camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#999999"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/image_view_pick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/post_image_btn"
+            android:scaleType="centerCrop" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layout_bottom"
+        android:layout_below="@+id/layout_camera"
+        android:layout_marginTop="5dp"
+        android:background="#F2F2F2"
+        android:padding="5dp" >
+
+        <Button
+            android:id="@+id/text_view_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Category"
+            android:padding="5dp" />
+
+        <Button
+            android:id="@+id/text_view_sub_cat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/text_view_category"
+            android:layout_alignRight="@+id/text_view_category"
+            android:layout_below="@+id/text_view_category"
+            android:layout_marginTop="10dp"
+            android:hint="Sub category"
+            android:padding="5dp" />
+
+        <EditText
+            android:id="@+id/text_view_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/text_view_category"
+            android:layout_alignRight="@+id/text_view_category"
+            android:layout_below="@+id/text_view_sub_cat"
+            android:layout_marginTop="10dp"
+            android:hint="Title"
+            android:padding="5dp" />
+
+        <EditText
+            android:id="@+id/text_view_description"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@+id/text_view_category"
+            android:layout_alignRight="@+id/text_view_category"
+            android:layout_below="@+id/text_view_title"
+            android:layout_marginTop="10dp"
+            android:hint="Description"
+            android:padding="5dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <Button
+            android:id="@+id/btn_make_food_shots"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_selector"
+            android:text="Submit Ad"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
+
+</RelativeLayout>

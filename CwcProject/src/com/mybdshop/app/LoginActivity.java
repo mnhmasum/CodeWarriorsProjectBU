@@ -3,10 +3,10 @@ package com.mybdshop.app;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import org.json.JSONException;
+
+import com.mybdshop.app.R;
 
 import android.app.Activity;
 import android.app.ProgressDialog;

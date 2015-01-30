@@ -2,9 +2,9 @@ package com.mybdshop.adapter;
 
 import java.util.List;
 
+import com.mybdshop.app.R;
 import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.mybdshop.app.R;
 import com.mybdshop.datamodel.DrawerItem;
 
 public class CustomDrawerAdapter extends ArrayAdapter<DrawerItem> {

@@ -3,6 +3,8 @@ package com.mybdshop.app;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mybdshop.app.R;
+
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -25,7 +27,9 @@ import com.mybdshop.datamodel.DrawerItem;
 import com.mybdshop.framents.FragmentCategories;
 import com.mybdshop.framents.FragmentDashboard;
 import com.mybdshop.framents.FragmentHome;
+import com.mybdshop.framents.FragmentProducts;
 import com.mybdshop.framents.FragmentProfileUpdate;
+import com.mybdshop.utils.Utility;
 
 public class MainActivity extends Activity {
 
@@ -56,11 +60,12 @@ public class MainActivity extends Activity {
 
 		dataList.add(new DrawerItem("Settings")); // adding a header to the list
 		dataList.add(new DrawerItem("Home", R.drawable.ic_action_email)); //1
-		dataList.add(new DrawerItem("DashBoard", R.drawable.ic_action_good));
+		dataList.add(new DrawerItem("DashBoard", R.drawable.ic_action_good)); //2
 
-		dataList.add(new DrawerItem("Main Options"));// adding a header to the list
-		dataList.add(new DrawerItem("Logout", R.drawable.ic_action_search));
-		dataList.add(new DrawerItem("Category", R.drawable.ic_action_good));
+		dataList.add(new DrawerItem("Main Options"));// adding a header to the list //3
+		dataList.add(new DrawerItem("Logout", R.drawable.ic_action_search)); //4
+		dataList.add(new DrawerItem("Category", R.drawable.ic_action_good)); //5
+		dataList.add(new DrawerItem("Filter", R.drawable.ic_action_good)); //6
 		
 
 		adapter = new CustomDrawerAdapter(this, R.layout.custom_drawer_item,dataList);
@@ -90,6 +95,8 @@ public class MainActivity extends Activity {
 		if (savedInstanceState == null) {
 			SelectItem(1);
 		}
+		
+		Utility.createFolder();
 
 	}
 
@@ -128,6 +135,11 @@ public class MainActivity extends Activity {
 			break;
 		case 5:
 			fragment = new FragmentCategories();
+			args.putString(FragmentDashboard.ITEM_NAME, dataList.get(possition).getItemName());
+			args.putInt(FragmentDashboard.IMAGE_RESOURCE_ID, dataList.get(possition).getImgResID());
+			break;
+		case 6:
+			fragment = new FragmentProducts();
 			args.putString(FragmentDashboard.ITEM_NAME, dataList.get(possition).getItemName());
 			args.putInt(FragmentDashboard.IMAGE_RESOURCE_ID, dataList.get(possition).getImgResID());
 			break;
