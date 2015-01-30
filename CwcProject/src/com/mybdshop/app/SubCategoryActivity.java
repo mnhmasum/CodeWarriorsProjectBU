@@ -72,9 +72,7 @@ public class SubCategoryActivity extends Activity implements OnClickListener, On
  }
 	
 	private void loadData() {
-		
 		arrayListSubCategory = new ArrayList<String>();
-		
 		for (int i = 0; i <5; i++) {
 			arrayListSubCategory.add("Hi" + i);
 		}
@@ -84,7 +82,9 @@ public class SubCategoryActivity extends Activity implements OnClickListener, On
 	
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-		// TODO Auto-generated method stub
+		Intent intent = new Intent(SubCategoryActivity.this, ProductViewActivity.class);
+		intent.putExtra("position", arg2);
+		startActivity(intent);
 		
 	}
 	 

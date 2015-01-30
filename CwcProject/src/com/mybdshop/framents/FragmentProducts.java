@@ -37,7 +37,7 @@ public class FragmentProducts extends Fragment implements OnClickListener{
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_products_view, container, false);
+		View view = inflater.inflate(R.layout.activity_products_view, container, false);
 		initView(view);
 		setListener();
 		//loadData();

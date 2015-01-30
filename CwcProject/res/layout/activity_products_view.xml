@@ -48,7 +48,7 @@
         android:layout_below="@+id/layout_filter_holder" >
 
         <ListView
-            android:id="@+id/list_view_latest_product"
+            android:id="@+id/list_view_products"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
