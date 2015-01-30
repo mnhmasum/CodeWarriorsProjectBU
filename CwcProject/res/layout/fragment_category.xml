@@ -5,7 +5,7 @@
     android:background="@color/white" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/txt_view_sub_cat_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -15,41 +15,13 @@
         android:textColor="@color/light_green"
         android:textSize="@dimen/title_font_size" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
+    <ListView
+        android:id="@+id/list_view_latest_product"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="@dimen/activity_vertical_margin"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/round_border"
-        android:orientation="vertical"
-        android:padding="@dimen/activity_around_padding" >
-
-    
-
-        <EditText
-            android:id="@+id/edit_text_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:drawableLeft="@drawable/ic_action_gamepad"
-            android:drawablePadding="@dimen/activity_around_padding"
-            android:ems="10"
-            android:hint="@string/hint_current_password"
-            android:inputType="textPassword"
-            android:padding="@dimen/activity_around_padding"
-            android:singleLine="true"
-            android:visibility="gone" />
-
-        <GridView
-            android:id="@+id/grid_view_category"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="none"
-            android:numColumns="3" >
-        </GridView>
-    </LinearLayout>
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txt_view_sub_cat_label"
+        android:scrollbars="none" >
+    </ListView>
 
 </RelativeLayout>

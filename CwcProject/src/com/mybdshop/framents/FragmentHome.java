@@ -3,6 +3,7 @@ package com.mybdshop.framents;
 
 import java.util.ArrayList;
 
+import com.mybdshop.app.ProductDetailsActivity;
 import com.mybdshop.app.R;
 import android.app.Fragment;
 import android.app.ProgressDialog;
@@ -12,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -21,7 +24,7 @@ import com.mybdshop.app.CreateAdActivity;
 import com.mybdshop.appinfo.AppController;
 import com.mybdshop.datamodel.LatestProductData;
 
-public class FragmentHome extends Fragment implements OnClickListener{
+public class FragmentHome extends Fragment implements OnClickListener, OnItemClickListener{
 	private EditText edtTextFirstName, edtTextLastName, edtTextEmail,
 			edtTextPassword, edtTextPasswordConfirm;
 	private Button btnCreateAd, btnRegister;
@@ -58,6 +61,7 @@ public class FragmentHome extends Fragment implements OnClickListener{
 	
 	 private void setListener() {
 		 btnCreateAd.setOnClickListener(this);
+		 latestProductListView.setOnItemClickListener(this);
 	}
 
 	private void initView(View view) {
@@ -84,5 +88,12 @@ public class FragmentHome extends Fragment implements OnClickListener{
 		latestProductAdapter = new LatestProductAdapter(getActivity(), AppController.getInstance().getLatestProductList());
 		latestProductListView.setAdapter(latestProductAdapter);
 	}
+
+	@Override
+	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+		startActivity(new Intent(getActivity(), ProductDetailsActivity.class));
+	}
+	
+	
 
 }
