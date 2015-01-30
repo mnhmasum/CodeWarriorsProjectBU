@@ -75,6 +75,19 @@
             android:padding="@dimen/activity_around_padding"
             android:singleLine="true" />
 
+        <EditText
+            android:id="@+id/edit_text_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:drawableLeft="@drawable/ic_action_video"
+            android:drawablePadding="@dimen/activity_around_padding"
+            android:ems="10"
+            android:hint="@string/hint_user_mobile"
+            android:inputType="numberDecimal"
+            android:padding="@dimen/activity_around_padding"
+            android:singleLine="true" />
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -89,6 +102,19 @@
             android:drawablePadding="@dimen/activity_around_padding"
             android:ems="10"
             android:hint="@string/hint_password"
+            android:inputType="textPassword"
+            android:padding="@dimen/activity_around_padding"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/edit_text_confirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:drawableLeft="@drawable/ic_action_gamepad"
+            android:drawablePadding="@dimen/activity_around_padding"
+            android:ems="10"
+            android:hint="@string/hint_confirm_password"
             android:inputType="textPassword"
             android:padding="@dimen/activity_around_padding"
             android:singleLine="true" />

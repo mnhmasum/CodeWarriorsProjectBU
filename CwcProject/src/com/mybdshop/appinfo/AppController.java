@@ -1,5 +1,7 @@
 package com.mybdshop.appinfo;
 
+import java.util.ArrayList;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,11 +11,13 @@ import android.text.Html;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import com.mybdshop.datamodel.LatestProductData;
 import com.mybdshop.datamodel.UserInfoData;
 
 public class AppController {
 	public static AppController instance;
 	private UserInfoData userInfo;
+	private ArrayList<LatestProductData> latestProductList;
 	
 	public UserInfoData getUserInfo() {
 		return userInfo;
@@ -66,6 +70,14 @@ public class AppController {
 		});
 		
 		alert.show();
+	}
+
+	public ArrayList<LatestProductData> getLatestProductList() {
+		return latestProductList;
+	}
+
+	public void setLatestProductList(ArrayList<LatestProductData> latestProductList) {
+		this.latestProductList = latestProductList;
 	}
 
 }

@@ -22,7 +22,9 @@ import android.widget.ListView;
 
 import com.mybdshop.adapter.CustomDrawerAdapter;
 import com.mybdshop.datamodel.DrawerItem;
+import com.mybdshop.framents.FragmentCategories;
 import com.mybdshop.framents.FragmentDashboard;
+import com.mybdshop.framents.FragmentHome;
 import com.mybdshop.framents.FragmentProfileUpdate;
 
 public class MainActivity extends Activity {
@@ -53,11 +55,13 @@ public class MainActivity extends Activity {
 		// Add Drawer Item to dataList
 
 		dataList.add(new DrawerItem("Settings")); // adding a header to the list
-		dataList.add(new DrawerItem("Profiles", R.drawable.ic_action_email)); //1
+		dataList.add(new DrawerItem("Home", R.drawable.ic_action_email)); //1
 		dataList.add(new DrawerItem("DashBoard", R.drawable.ic_action_good));
 
 		dataList.add(new DrawerItem("Main Options"));// adding a header to the list
 		dataList.add(new DrawerItem("Logout", R.drawable.ic_action_search));
+		dataList.add(new DrawerItem("Category", R.drawable.ic_action_good));
+		
 
 		adapter = new CustomDrawerAdapter(this, R.layout.custom_drawer_item,dataList);
 		mDrawerList.setAdapter(adapter);
@@ -84,7 +88,7 @@ public class MainActivity extends Activity {
 		mDrawerLayout.setDrawerListener(mDrawerToggle);
 
 		if (savedInstanceState == null) {
-			SelectItem(2);
+			SelectItem(1);
 		}
 
 	}
@@ -104,7 +108,7 @@ public class MainActivity extends Activity {
 		Bundle args = new Bundle();
 		switch (possition) {
 		case 1:
-			fragment = new FragmentProfileUpdate();
+			fragment = new FragmentHome();
 			args.putString(FragmentDashboard.ITEM_NAME, dataList.get(possition).getItemName());
 			args.putInt(FragmentDashboard.IMAGE_RESOURCE_ID, dataList.get(possition).getImgResID());
 			break;
@@ -114,13 +118,18 @@ public class MainActivity extends Activity {
 			args.putInt(FragmentDashboard.IMAGE_RESOURCE_ID, dataList.get(possition).getImgResID());
 			break;
 		case 3:
-			fragment = new FragmentDashboard();
+			fragment = new FragmentProfileUpdate();
 			args.putString(FragmentDashboard.ITEM_NAME, dataList.get(possition).getItemName());
 			args.putInt(FragmentDashboard.IMAGE_RESOURCE_ID, dataList.get(possition).getImgResID());
 			break;
 		case 4:
 			startActivity(new Intent(MainActivity.this, LoginActivity.class));
 			//finish();
+			break;
+		case 5:
+			fragment = new FragmentCategories();
+			args.putString(FragmentDashboard.ITEM_NAME, dataList.get(possition).getItemName());
+			args.putInt(FragmentDashboard.IMAGE_RESOURCE_ID, dataList.get(possition).getImgResID());
 			break;
 
 		default:

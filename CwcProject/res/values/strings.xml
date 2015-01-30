@@ -11,6 +11,7 @@
     <string name="hint_user_first_name">First Name</string>
     <string name="hint_user_last_name">Last Name</string>
     <string name="hint_user_email">Email</string>
+    <string name="hint_user_mobile">Mobile no</string>
     <string name="hint_password">Password</string>
     <string name="hint_current_password">Current password</string>
     <string name="hint_confirm_password">Confirm password</string>
@@ -22,7 +23,10 @@
     <string name="update">Update</string>
     <string name="create_account">Let\'s create your account</string>
     <string name="my_profile">My Profile</string>
+    <string name="title_category">Categories</string>
     <string name="profile_update_msg">Profile has been updated</string>
+    <string name="button_text_post_new">Create an adv</string>
+    <string name="button_text_location">Location</string>
 
     <color name="light_green">#1E8E66</color>
     <color name="red_orange">#F1705D</color>
