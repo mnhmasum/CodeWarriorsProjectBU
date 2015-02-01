@@ -1,39 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_height="wrap_content" >
 
     <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/app_logo" />
+        android:id="@+id/img_view_product"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/edit_text_padding"
+        android:layout_marginRight="@dimen/activity_around_padding"
+        android:src="@drawable/car" />
 
     <TextView
         android:id="@+id/txt_view_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="19dp"
+        android:layout_alignTop="@+id/img_view_product"
+        android:layout_toRightOf="@+id/img_view_product"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/txt_view_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txt_view_title"
         android:layout_below="@+id/txt_view_title"
+        android:layout_marginTop="@dimen/edit_text_padding"
+        android:layout_toRightOf="@+id/img_view_product"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/txt_view_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView1"
-        android:layout_alignLeft="@+id/txt_view_time"
+        android:layout_below="@+id/txt_view_time"
+        android:layout_marginTop="@dimen/edit_text_padding"
+        android:layout_toRightOf="@+id/img_view_product"
         android:text="TextView" />
 
 </RelativeLayout>

@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:background="#999999"
+        android:background="@color/bg_light_blue"
+        android:padding="@dimen/activity_around_padding"
         android:gravity="center" >
 
         <Button
@@ -18,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
-            android:background="@drawable/post_image_btn" />
+            android:background="@drawable/post_cam_btn" />
 
         <Button
             android:id="@+id/btn_post_gallary"

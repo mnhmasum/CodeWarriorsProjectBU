@@ -7,7 +7,9 @@ import java.util.List;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
@@ -27,7 +29,7 @@ import com.mybdshop.adapter.ViewPagerAdapter;
 
 public class ProductDetailsActivity extends Activity implements OnClickListener, OnItemSelectedListener {
 	private EditText edtTextEmail, edtTextPassword;
-	private Button btnLogin, btnRegister;
+	private Button btnLogin, btnRegister, btnShare;
 	private Button imgViewBtnGallery;
 	private Button imgViewBtnCamera;
 	private ImageView imgViewPick;
@@ -37,6 +39,7 @@ public class ProductDetailsActivity extends Activity implements OnClickListener,
 	private Spinner spinner1, spinner2;
 	private static final int  PICK_FROM_CAMERA = 1;
 	private static final int  PICK_FROM_GALLERY = 2;
+	private Button btnCall, btnMail;
 	
 	ViewPager viewPager;
 	PagerAdapter adapter;
@@ -46,15 +49,20 @@ public class ProductDetailsActivity extends Activity implements OnClickListener,
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_product_details);
-		flag = new int[] { R.drawable.demo_food, R.drawable.app_logo,
-				R.drawable.demo_food, R.drawable.app_logo,
-				R.drawable.demo_food, R.drawable.app_logo};
-		
+		flag = new int[] { R.drawable.car, R.drawable.freezer,
+				R.drawable.mobile, R.drawable.motorcycle,
+				R.drawable.pendrive};
+		btnCall = (Button)findViewById(R.id.btn_call);
+		btnMail = (Button)findViewById(R.id.btn_mail);
+		btnShare = (Button)findViewById(R.id.btn_share);
 		viewPager = (ViewPager) findViewById(R.id.pager);
 		// Pass results to ViewPagerAdapter Class
 		adapter = new ViewPagerAdapter(ProductDetailsActivity.this, flag);
 		// Binds the Adapter to the ViewPager
 		viewPager.setAdapter(adapter);
+		btnMail.setOnClickListener(this);
+		btnCall.setOnClickListener(this);
+		btnShare.setOnClickListener(this);
 		//addItemsOnSpinner2();
 		//initView();
 		//setActionListener();
@@ -90,7 +98,29 @@ public class ProductDetailsActivity extends Activity implements OnClickListener,
 			Intent intent = new Intent(ProductDetailsActivity.this, RegistrationActivity.class);
 			startActivity(intent);
 			break;
-
+		case R.id.btn_call:
+			AudioManager audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+			audioManager.setMode(AudioManager.MODE_IN_CALL);
+			audioManager.setSpeakerphoneOn(true);
+			Intent callIntent = new Intent(Intent.ACTION_CALL);
+			callIntent.setPackage("com.android.phone");
+			callIntent.setData(Uri.parse("tel:01759495135"));
+			startActivity(callIntent);
+			break;
+		case R.id.btn_mail:
+			Intent smsIntent = new Intent(Intent.ACTION_VIEW);
+			smsIntent.setType("vnd.android-dir/mms-sms");
+			smsIntent.putExtra("address", "12125551212");
+			smsIntent.putExtra("sms_body","Body of Message");
+			startActivity(smsIntent);
+			break;
+		case R.id.btn_share:
+			Intent shareIntent = new Intent(Intent.ACTION_SEND);
+			shareIntent.setType("text/plain");
+			shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Its Awesome");
+			shareIntent.putExtra(Intent.EXTRA_TEXT,  "I love it  http://www.akhoni.com/champions.html");
+			startActivity(Intent.createChooser(shareIntent, "Share"));
+			break;
 		default:
 			break;
 		}

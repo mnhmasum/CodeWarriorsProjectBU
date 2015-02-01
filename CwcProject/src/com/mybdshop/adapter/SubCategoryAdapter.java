@@ -12,29 +12,29 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mybdshop.appinfo.AppController;
+import com.mybdshop.appinfo.SubCategoryData;
 import com.mybdshop.datamodel.LatestProductData;
 
 public class SubCategoryAdapter extends BaseAdapter{
 	
-	private ArrayList<String> latestProductList;
+	private ArrayList<SubCategoryData> subCategoryList;
 	private Context context;
 	private LayoutInflater mInflater;
 	
-	public SubCategoryAdapter(Context context, ArrayList<String> hottestInfo) {
-		this.latestProductList = hottestInfo;
+	public SubCategoryAdapter(Context context, ArrayList<SubCategoryData> subCatList) {
+		this.subCategoryList = subCatList;
 		this.context = context;
-				
 	}
 
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return this.latestProductList.size();
+		return this.subCategoryList.size();
 	}
 
 	@Override
 	public Object getItem(int position) {
-		return this.latestProductList.get(position);
+		return this.subCategoryList.get(position);
 	}
 
 	@Override
@@ -60,7 +60,7 @@ public class SubCategoryAdapter extends BaseAdapter{
 			holder = (ViewHolder) convertView.getTag();
 		}
 		
-		holder.txtViewSubCategoryName.setText(AppController.getInstance().getLatestProductList().get(position).getProductTitle());
+		holder.txtViewSubCategoryName.setText(subCategoryList.get(position).getCatTitle());
 		return convertView;
 	}
 	

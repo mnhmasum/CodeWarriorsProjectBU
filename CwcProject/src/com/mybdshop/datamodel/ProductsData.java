@@ -1,5 +1,7 @@
 package com.mybdshop.datamodel;
 
+import java.util.ArrayList;
+
 public class ProductsData {
 	private int productId;
 	private String productCatId;
@@ -10,6 +12,7 @@ public class ProductsData {
 	private String uploadedDate;
 	private String shareLink;
 	private String location;
+	private ArrayList<ImageData> imageDataList;
 	
 	public int getProductId() {
 		return productId;
@@ -64,6 +67,12 @@ public class ProductsData {
 	}
 	public void setLocation(String location) {
 		this.location = location;
+	}
+	public ArrayList<ImageData> getImageDataList() {
+		return imageDataList;
+	}
+	public void setImageDataList(ArrayList<ImageData> imageDataList) {
+		this.imageDataList = imageDataList;
 	}
 
 }

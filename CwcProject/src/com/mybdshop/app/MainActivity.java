@@ -1,13 +1,27 @@
 package com.mybdshop.app;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.json.JSONException;
+
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.RetryPolicy;
+import com.android.volley.VolleyError;
+import com.android.volley.Request.Method;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.mybdshop.app.R;
+import com.mybdshop.appinfo.AppController;
 
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -21,7 +35,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import com.mybdshop.adapter.CategoryGridAdapter;
 import com.mybdshop.adapter.CustomDrawerAdapter;
 import com.mybdshop.datamodel.DrawerItem;
 import com.mybdshop.framents.FragmentCategories;
@@ -29,6 +45,8 @@ import com.mybdshop.framents.FragmentDashboard;
 import com.mybdshop.framents.FragmentHome;
 import com.mybdshop.framents.FragmentProducts;
 import com.mybdshop.framents.FragmentProfileUpdate;
+import com.mybdshop.jsonparser.JsonParser;
+import com.mybdshop.utils.ConstantValues;
 import com.mybdshop.utils.Utility;
 
 public class MainActivity extends Activity {
@@ -40,7 +58,6 @@ public class MainActivity extends Activity {
 	private CharSequence mDrawerTitle;
 	private CharSequence mTitle;
 	CustomDrawerAdapter adapter;
-
 	List<DrawerItem> dataList;
 
 	@Override
@@ -57,17 +74,14 @@ public class MainActivity extends Activity {
 		mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
 
 		// Add Drawer Item to dataList
-
-		dataList.add(new DrawerItem("Settings")); // adding a header to the list
+		dataList.add(new DrawerItem(" ")); // adding a header to the list
 		dataList.add(new DrawerItem("Home", R.drawable.ic_action_email)); //1
-		dataList.add(new DrawerItem("DashBoard", R.drawable.ic_action_good)); //2
+		dataList.add(new DrawerItem("Create an Ad", R.drawable.ic_action_about)); //2
 
-		dataList.add(new DrawerItem("Main Options"));// adding a header to the list //3
-		dataList.add(new DrawerItem("Logout", R.drawable.ic_action_search)); //4
-		dataList.add(new DrawerItem("Category", R.drawable.ic_action_good)); //5
-		dataList.add(new DrawerItem("Filter", R.drawable.ic_action_good)); //6
-		
-
+		dataList.add(new DrawerItem("My Favourites", R.drawable.ic_action_good));// adding a header to the list //3
+		dataList.add(new DrawerItem("Login", R.drawable.ic_action_search)); //4
+		dataList.add(new DrawerItem(" ")); //5
+		dataList.add(new DrawerItem("CATEGORIES", R.drawable.ic_action_import_export)); //6
 		adapter = new CustomDrawerAdapter(this, R.layout.custom_drawer_item,dataList);
 		mDrawerList.setAdapter(adapter);
 
@@ -120,12 +134,10 @@ public class MainActivity extends Activity {
 			args.putInt(FragmentDashboard.IMAGE_RESOURCE_ID, dataList.get(possition).getImgResID());
 			break;
 		case 2:
-			fragment = new FragmentDashboard();
-			args.putString(FragmentDashboard.ITEM_NAME, dataList.get(possition).getItemName());
-			args.putInt(FragmentDashboard.IMAGE_RESOURCE_ID, dataList.get(possition).getImgResID());
+			startActivity(new Intent(MainActivity.this, CreateAdActivity.class));
 			break;
 		case 3:
-			fragment = new FragmentProfileUpdate();
+			fragment = new FragmentCategories();
 			args.putString(FragmentDashboard.ITEM_NAME, dataList.get(possition).getItemName());
 			args.putInt(FragmentDashboard.IMAGE_RESOURCE_ID, dataList.get(possition).getImgResID());
 			break;
@@ -139,19 +151,26 @@ public class MainActivity extends Activity {
 			args.putInt(FragmentDashboard.IMAGE_RESOURCE_ID, dataList.get(possition).getImgResID());
 			break;
 		case 6:
-			fragment = new FragmentProducts();
+			fragment = new FragmentCategories();
 			args.putString(FragmentDashboard.ITEM_NAME, dataList.get(possition).getItemName());
-			args.putInt(FragmentDashboard.IMAGE_RESOURCE_ID, dataList.get(possition).getImgResID());
 			break;
 
 		default:
 			break;
 		}
 		
-		if (possition == 4) {
-			finish();
+		if (possition == 2) {
+			mDrawerLayout.closeDrawer(mDrawerList);
+			//finish();
 			return;
 		}
+		
+		if (possition == 4) {
+			//mDrawerLayout.closeDrawer(mDrawerList);
+			//finish();
+			return;
+		}
+		
 		fragment.setArguments(args);
 		FragmentManager frgManager = getFragmentManager();
 		frgManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
@@ -201,6 +220,7 @@ public class MainActivity extends Activity {
 		}
 		
 	}
+	
 
 	private class DrawerItemClickListener implements
 			ListView.OnItemClickListener {

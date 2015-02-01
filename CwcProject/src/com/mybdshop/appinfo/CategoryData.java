@@ -1,10 +1,13 @@
 package com.mybdshop.appinfo;
 
+import java.util.ArrayList;
+
 public class CategoryData {
 	private int catId;
 	private int subCatId;
 	private String catTitle;
 	private String catItemImage;
+	private ArrayList<SubCategoryData> arrayListSubCategory;
 	
 	public int getCatId() {
 		return catId;
@@ -29,6 +32,12 @@ public class CategoryData {
 	}
 	public void setCatItemImage(String catItemImage) {
 		this.catItemImage = catItemImage;
+	}
+	public ArrayList<SubCategoryData> getArrayListSubCategory() {
+		return arrayListSubCategory;
+	}
+	public void setArrayListSubCategory(ArrayList<SubCategoryData> arrayListSubCategory) {
+		this.arrayListSubCategory = arrayListSubCategory;
 	}
 
 

@@ -36,7 +36,7 @@
             android:drawableLeft="@drawable/ic_action_about"
             android:drawablePadding="@dimen/activity_around_padding"
             android:ems="10"
-            android:hint="@string/hint_user_first_name"
+            android:hint="@string/hint_user_full_name"
             android:maxLength="15"
             android:padding="@dimen/activity_around_padding"
             android:singleLine="true" />

@@ -2,13 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:padding="@dimen/activity_around_padding">
 
     <Button
         android:id="@+id/btn_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableRight="@drawable/app_logo"
+        android:drawableRight="@drawable/ic_action_about"
+        android:background="@color/light_gray"
         android:text="@string/button_text_location" />
 
     <Button
@@ -16,7 +18,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_location"
+        android:padding="@dimen/edit_text_padding"
         android:drawableRight="@drawable/app_logo"
+        android:background="@drawable/button_selector"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
         android:text="@string/button_text_post_new" />
 
     <TextView
@@ -25,7 +30,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/btn_create_ad"
-        android:text="Latest in computer" />
+        android:textSize="@dimen/title_font_size"
+        android:paddingTop="@dimen/activity_around_padding"
+        android:paddingBottom="@dimen/activity_around_padding"
+        android:paddingLeft="@dimen/activity_around_padding"
+        android:textColor="@color/light_green"
+        android:text="@string/latest_prod_title" />
 
     <ListView
         android:id="@+id/list_view_latest_product"

@@ -2,14 +2,17 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="#999999" >
+    android:background="@drawable/top_bar" >
 
     <TextView
         android:id="@+id/tvTitleText"
-        android:layout_width="wrap_content"
+        style="@style/title_bar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:padding="15dp"
         android:gravity="center"
-        android:text="@string/app_name" />
+        android:background="@color/light_green"
+        android:text="Gallery" />
 
 </FrameLayout>

@@ -16,11 +16,11 @@
 
             <ImageView
                 android:id="@+id/imgQueue"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="@dimen/photo_width"
+                android:layout_height="@dimen/photo_height"
                 android:contentDescription="@string/app_name"
                 android:scaleType="centerCrop"
-                android:src="@drawable/app_logo" />
+                android:src="@drawable/no_media" />
         </FrameLayout>
 
         <ImageView
@@ -30,7 +30,7 @@
             android:layout_gravity="right"
             android:layout_marginRight="2dp"
             android:layout_marginTop="2dp"
-            android:background="@drawable/app_logo"
+            android:background="@drawable/on_focus_checkbox"
             android:contentDescription="@string/app_name"
             android:gravity="center"
             android:scaleType="center"

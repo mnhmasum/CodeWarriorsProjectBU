@@ -50,10 +50,10 @@
     <ImageView
         android:id="@+id/flag"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="250dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:background="@drawable/demo_food"
+        android:background="@drawable/register_button_selector"
         android:padding="1dp"
         android:scaleType="fitXY" />
 

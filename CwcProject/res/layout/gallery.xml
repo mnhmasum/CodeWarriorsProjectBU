@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#999999"
+    android:background="@color/bg_light_blue"
     android:orientation="vertical" >
 
     <include
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/app_logo" />
+            android:src="@drawable/no_media" />
     </FrameLayout>
 
     <LinearLayout
@@ -50,11 +50,12 @@
 
         <Button
             android:id="@+id/btnGalleryOk"
+            style="@style/btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/app_logo"
-            android:text="OKK" />
+            android:background="@drawable/btn_sel"
+            android:text="@string/btn_ok" />
     </LinearLayout>
 
 </LinearLayout>

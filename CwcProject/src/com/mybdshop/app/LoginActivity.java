@@ -102,8 +102,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 				ConstantValues.API_URL,
 				createMyReqSuccessListener(), createMyReqErrorListener()) {
 
-			protected Map<String, String> getParams()
-					throws com.android.volley.AuthFailureError {
+			protected Map<String, String> getParams() throws com.android.volley.AuthFailureError {
 				Map<String, String> params = new HashMap<String, String>();
 				params.put("email", edtTextEmail.getText().toString().trim());
 				params.put("password", edtTextPassword.getText().toString().trim());

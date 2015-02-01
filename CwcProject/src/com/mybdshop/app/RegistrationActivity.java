@@ -5,7 +5,6 @@ import java.util.Map;
 
 import org.json.JSONException;
 
-import com.mybdshop.app.R;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -27,10 +26,11 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.mybdshop.jsonparser.JsonParser;
+import com.mybdshop.utils.ConstantValues;
 import com.mybdshop.utils.Utility;
 
 public class RegistrationActivity extends Activity implements OnClickListener {
-	private EditText edtTextFirstName, edtTextLastName, edtTextEmail, edtTextPassword;
+	private EditText edtTextFullName, edtTextMobile, edtTextEmail, edtTextPassword;
 	private Button btnLogin, btnRegister;
 	private ProgressDialog progressDialog;
 
@@ -48,8 +48,8 @@ public class RegistrationActivity extends Activity implements OnClickListener {
 	}
 
 	private void initView() {
-		edtTextFirstName = (EditText) findViewById(R.id.edit_text_first_name);
-		edtTextLastName = (EditText) findViewById(R.id.edit_text_last_name);
+		edtTextFullName = (EditText) findViewById(R.id.edit_text_full_name);
+		edtTextMobile = (EditText) findViewById(R.id.edit_text_mobile);
 		edtTextEmail = (EditText) findViewById(R.id.edit_text_email);
 		edtTextPassword = (EditText) findViewById(R.id.edit_text_password);
 		btnRegister = (Button) findViewById(R.id.btn_register);
@@ -79,21 +79,12 @@ public class RegistrationActivity extends Activity implements OnClickListener {
 
 	public void registrationValidation() {
 		boolean isValid = true;
-		if (edtTextFirstName.getText().toString().trim().length() > 0) {
+		if (edtTextFullName.getText().toString().trim().length() > 0) {
 			//Toast.makeText(getApplicationContext(), "First Name is valid", Toast.LENGTH_SHORT).show();
-			edtTextFirstName.setError(null);
+			edtTextFullName.setError(null);
 			
 		} else {
-			edtTextFirstName.setError("Please enter your first name");
-			isValid = false;
-		}
-		
-		if (edtTextLastName.getText().toString().trim().length() > 0) {
-			//Toast.makeText(getApplicationContext(), "Last Name is valid", Toast.LENGTH_SHORT).show();
-			edtTextLastName.setError(null);
-			
-		} else {
-			edtTextLastName.setError("Please enter your last name");
+			edtTextFullName.setError("Please enter your first name");
 			isValid = false;
 		}
 		
@@ -102,6 +93,14 @@ public class RegistrationActivity extends Activity implements OnClickListener {
 			
 		} else {
 			edtTextEmail.setError("Please enter valid email");
+			isValid = false;
+		}
+		
+		if (edtTextMobile.getText().toString().trim().length() > 10 && edtTextMobile.getText().toString().trim().length() < 12 && edtTextMobile.getText().toString().trim().length() !=0) {
+			edtTextMobile.setError(null);
+			
+		} else {
+			edtTextMobile.setError("Please enter mobile number");
 			isValid = false;
 		}
 		
@@ -122,17 +121,15 @@ public class RegistrationActivity extends Activity implements OnClickListener {
 	private void registration() {
 		RequestQueue queue = Volley.newRequestQueue(this);
 
-		StringRequest myReq = new StringRequest(Method.POST,
-				"http://radioonlinelive.com/services/api.php",
+		StringRequest myReq = new StringRequest(Method.POST, ConstantValues.API_URL,
 				createMyReqSuccessListener(), createMyReqErrorListener()) {
 
-			protected Map<String, String> getParams()
-					throws com.android.volley.AuthFailureError {
+			protected Map<String, String> getParams() throws com.android.volley.AuthFailureError {
 				Map<String, String> params = new HashMap<String, String>();
 				params.put("func_id", "1001");
-				params.put("first_name", edtTextFirstName.getText().toString().trim());
-				params.put("last_name", edtTextLastName.getText().toString().trim());
+				params.put("full_name", edtTextFullName.getText().toString().trim());
 				params.put("email", edtTextEmail.getText().toString().trim());
+				params.put("mobile", edtTextMobile.getText().toString().trim());
 				params.put("password", edtTextPassword.getText().toString().trim());
 				return params;
 			};

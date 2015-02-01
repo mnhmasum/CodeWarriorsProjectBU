@@ -8,5 +8,10 @@
 	<dimen name="imporatant_btn_text_size">22sp</dimen>
 	<dimen name="title_font_size">20sp</dimen>
 	<dimen name="register_margin">50dp</dimen>
+	<dimen name="row_latest_product_layout_pad">50dp</dimen>
+	<dimen name="row_latest_product_layout_mar">20dp</dimen>
+	<dimen name="row_latest_product_pad">15dp</dimen>
+	<dimen name="margin_top">15dp</dimen>
+	<dimen name="curreny_text_size">22sp</dimen>
 
 </resources>

@@ -12,12 +12,15 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import com.mybdshop.datamodel.LatestProductData;
+import com.mybdshop.datamodel.ProductsData;
 import com.mybdshop.datamodel.UserInfoData;
 
 public class AppController {
 	public static AppController instance;
 	private UserInfoData userInfo;
 	private ArrayList<LatestProductData> latestProductList;
+	private ArrayList<CategoryData> arrayListCategory;
+	private ArrayList<ProductsData> listProductData;
 	
 	public UserInfoData getUserInfo() {
 		return userInfo;
@@ -78,6 +81,22 @@ public class AppController {
 
 	public void setLatestProductList(ArrayList<LatestProductData> latestProductList) {
 		this.latestProductList = latestProductList;
+	}
+
+	public ArrayList<CategoryData> getArrayListCategory() {
+		return arrayListCategory;
+	}
+
+	public void setArrayListCategory(ArrayList<CategoryData> arrayListCategory) {
+		this.arrayListCategory = arrayListCategory;
+	}
+
+	public ArrayList<ProductsData> getListProductData() {
+		return listProductData;
+	}
+
+	public void setListProductData(ArrayList<ProductsData> listProductData) {
+		this.listProductData = listProductData;
 	}
 
 }

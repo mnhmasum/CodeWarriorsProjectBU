@@ -2,8 +2,8 @@ package com.mybdshop.adapter;
 
 import java.util.ArrayList;
 
-import com.mybdshop.app.R;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,27 +11,30 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.mybdshop.app.R;
+import com.mybdshop.appinfo.AppController;
 import com.mybdshop.appinfo.CategoryData;
 
 public class CategoryGridAdapter extends BaseAdapter {
 
-	private ArrayList<CategoryData> galleryInfoList;
+	private ArrayList<CategoryData> categoryInfoList;
 	private LayoutInflater mInflater;
 	private Context context;
 
-	public CategoryGridAdapter(Context context, ArrayList<CategoryData> galleryInfoList) {
+	public CategoryGridAdapter(Context context, ArrayList<CategoryData> categoryInfoList) {
 		this.context = context;
-		this.galleryInfoList = galleryInfoList;
+		this.categoryInfoList = categoryInfoList;
 	}
 
 	@Override
 	public int getCount() {
-		return galleryInfoList.size();
+		Log.i("GET SIZE", "----" + categoryInfoList.size());
+		return categoryInfoList.size();
 	}
 
 	@Override
 	public Object getItem(int position) {
-		return galleryInfoList.get(position);
+		return categoryInfoList.get(position);
 	}
 
 	@Override
@@ -59,7 +62,7 @@ public class CategoryGridAdapter extends BaseAdapter {
 			holder = (ViewHolder) convertView.getTag();
 		}
 		
-		
+		holder.txtViewCatTitle.setText(AppController.getInstance().getArrayListCategory().get(position).getCatTitle());
 		/*if (InternetConnectivity.isConnectedToInternet(context)) {
 			new AQuery(context).id(holder.imageView).image(ConstantValues.FILE_BASE_URL+galleryInfoList.get(position).getAlbumImageUrl(), true, true, 0, R.drawable.no_image);
 			

@@ -47,9 +47,9 @@ public class ProductFullViewActivity extends Activity implements OnClickListener
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_product_full_view);
-		flag = new int[] { R.drawable.demo_food, R.drawable.app_logo,
-				R.drawable.demo_food, R.drawable.app_logo,
-				R.drawable.demo_food, R.drawable.app_logo};
+		flag = new int[] { R.drawable.car, R.drawable.freezer,
+				R.drawable.mobile, R.drawable.motorcycle,
+				R.drawable.pendrive};
 		
 		
 		int position = getIntent().getExtras().getInt("click_position");

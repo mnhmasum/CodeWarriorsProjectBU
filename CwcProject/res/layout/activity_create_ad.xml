@@ -30,32 +30,33 @@
         android:background="#F2F2F2"
         android:padding="5dp" >
 
-        <Button
-            android:id="@+id/text_view_category"
+        <Spinner
+            android:id="@+id/btn_select_cat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="Category"
-            android:padding="5dp" />
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView1"
+            android:layout_marginTop="5dp" />
 
-        <Button
-            android:id="@+id/text_view_sub_cat"
-            android:layout_width="wrap_content"
+        <Spinner
+            android:id="@+id/btn_subcat_select"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/text_view_category"
-            android:layout_alignRight="@+id/text_view_category"
-            android:layout_below="@+id/text_view_category"
-            android:layout_marginTop="10dp"
+            android:layout_alignLeft="@+id/btn_select_cat"
+            android:layout_alignRight="@+id/btn_select_cat"
+            android:layout_below="@+id/btn_select_cat"
+            android:layout_marginTop="5dp"
             android:hint="Sub category"
-            android:padding="5dp" />
+            android:padding="5dp"
+            android:visibility="visible" />
 
         <EditText
             android:id="@+id/text_view_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/text_view_category"
-            android:layout_alignRight="@+id/text_view_category"
-            android:layout_below="@+id/text_view_sub_cat"
+            android:layout_alignLeft="@+id/btn_select_cat"
+            android:layout_alignRight="@+id/btn_select_cat"
+            android:layout_below="@+id/btn_subcat_select"
             android:layout_marginTop="10dp"
             android:hint="Title"
             android:padding="5dp" />
@@ -63,13 +64,24 @@
         <EditText
             android:id="@+id/text_view_description"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignLeft="@+id/text_view_category"
-            android:layout_alignRight="@+id/text_view_category"
+            android:layout_height="100dp"
+            android:layout_alignLeft="@+id/btn_select_cat"
+            android:layout_alignRight="@+id/btn_select_cat"
             android:layout_below="@+id/text_view_title"
             android:layout_marginTop="10dp"
+            android:gravity="top"
             android:hint="Description"
             android:padding="5dp" />
+
+        <Button
+            android:id="@+id/btn_add_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_gray"
+            android:layout_below="@+id/text_view_description"
+            android:text="Add Location"
+            android:visibility="gone"
+            android:textColor="#000000" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -79,7 +91,7 @@
         android:layout_alignParentBottom="true" >
 
         <Button
-            android:id="@+id/btn_make_food_shots"
+            android:id="@+id/btn_create_ad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_selector"

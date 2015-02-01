@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="#FFFFFF" >
 
     <RelativeLayout
         android:id="@+id/relative_bottom"
@@ -22,7 +23,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight=".33"
-                android:background="@drawable/ic_launcher" />
+                android:background="@drawable/button_selector"
+                android:text="CAll" />
 
             <View
                 android:layout_width="2dp"
@@ -34,7 +36,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight=".33"
-                android:background="@drawable/ic_launcher" />
+                android:background="@drawable/button_selector"
+                android:text="SMS" />
 
             <View
                 android:layout_width="2dp"
@@ -46,7 +49,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight=".33"
-                android:background="@drawable/ic_launcher" />
+                android:background="@drawable/button_selector"
+                android:text="EMAIL" />
         </LinearLayout>
     </RelativeLayout>
 
@@ -55,12 +59,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="60dp" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#000000"
+            android:background="#FFFFFF"
             android:orientation="vertical" >
 
             <android.support.v4.view.ViewPager
@@ -71,25 +76,35 @@
                 android:background="#999999" >
             </android.support.v4.view.ViewPager>
 
+            <Button
+                android:id="@+id/btn_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/register_button_selector"
+                android:text="Share" />
+
+            <TextView
+                android:id="@+id/txt_view_product_details_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="30 Jan 2015" />
+
             <RelativeLayout
                 android:id="@+id/relative_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
-                android:padding="5dp" >
-
-                <TextView
-                    android:id="@+id/txt_view_product_details_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="30 Jan 2015" />
+                android:padding="@dimen/row_latest_product_pad" >
 
                 <TextView
                     android:id="@+id/txt_view_product_details_location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/txt_view_product_details_date"
-                    android:text="30 Jan 2015" />
+                    android:text="Gulshan, DHaka" />
 
                 <TextView
                     android:id="@+id/txt_view_product_details_"
@@ -98,7 +113,10 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="16dp"
-                    android:text="TextView" />
+                    android:layout_marginTop="-20dp"
+                    android:text="12000 TK"
+                    android:textColor="@color/deep_red"
+                    android:textSize="22sp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -106,22 +124,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
-                android:padding="5dp" >
+                android:padding="@dimen/row_latest_product_pad" >
 
                 <TextView
                     android:id="@+id/txt_view_product_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Title" />
+                    android:text="Walton" />
 
                 <TextView
                     android:id="@+id/txt_view_product_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/txt_view_product_title"
-                    android:text="Details" />
+                    android:text="The shoes did not fit my size. But the shoes are in great shape.
+It is comfortable for running.
+Color- Grey,light Blue
+padded ankle and padded footbed
+Size-6 " />
             </RelativeLayout>
         </LinearLayout>
+
     </ScrollView>
 
 </RelativeLayout>
